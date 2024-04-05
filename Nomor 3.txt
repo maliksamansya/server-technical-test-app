@@ -1,0 +1,27 @@
+CREATE TABLE User (
+    Id VARCHAR(255) PRIMARY KEY,
+    Nama VARCHAR(255),
+    Email VARCHAR(255),
+    telp VARCHAR(255)
+);
+
+CREATE TABLE Company (
+    Id VARCHAR(255) PRIMARY KEY,
+    User_id VARCHAR(255),
+    Company_code VARCHAR(255),
+    Company_name VARCHAR(255),
+    FOREIGN KEY (User_id) REFERENCES User(Id)
+);
+
+SELECT 
+    u.Id AS User_id,
+    c.Id AS Company_id,
+    u.Nama AS Nama,
+    u.Email AS Email,
+    u.telp AS Telp,
+    c.Company_code AS Company_code,
+    c.Company_name AS Company_name
+FROM 
+    User u
+LEFT JOIN 
+    Company c ON u.Id = c.User_id;
