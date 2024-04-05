@@ -7,9 +7,15 @@ export class ManipulateApiController {
 
   @Get()
   fetchData(
+    @Query('name') name: string,
     @Query('results') results: number = 10,
     @Query('page') page: number = 1,
   ) {
-    return this.fetchService.fetchData(results, page);
+    // return this.fetchService.fetchData(results, page);
+    if (name) {
+      return this.fetchService.searchByName(name, results, page);
+    } else {
+      return this.fetchService.fetchData(results, page);
+    }
   }
 }
