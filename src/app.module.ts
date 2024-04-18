@@ -6,7 +6,7 @@ import { CheckoutController } from './checkout/checkout.controller';
 import { ManipulateApiController } from './manipulate-api/manipulate-api.controller';
 import { ManipulateApiService } from './manipulate-api/manipulate-api.service';
 import { AuthModule } from './auth/auth.module';
-import { AuthController } from './auth/auth.controller';
+// import { AuthController } from './auth/auth.controller';
 import { ManipulateArrayController } from './manipulate-array/manipulate-array.controller';
 import { ManipulateArrayService } from './manipulate-array/manipulate-array.service';
 
@@ -16,7 +16,7 @@ import { ManipulateArrayService } from './manipulate-array/manipulate-array.serv
     AppController,
     CheckoutController,
     ManipulateApiController,
-    AuthController,
+    // AuthController,
     ManipulateArrayController,
   ],
   providers: [AppService, ManipulateApiService, ManipulateArrayService],
